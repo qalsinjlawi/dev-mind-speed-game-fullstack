@@ -1,95 +1,104 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dev Mind Speed Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- صفحة البداية -->
+    <!-- Start Page -->
     <div id="startPage" class="page active">
         <div class="container">
+            <div class="company-header">
+                <img src="https://media.licdn.com/dms/image/v2/D4D0BAQH4b8ww3uhojg/company-logo_200_200/company-logo_200_200/0/1705499115912/circahub_logo?e=1756339200&v=beta&t=EbgunIZuYKVM1pRbbZbL88-mnkZ1FW9GaunuZ4oRr3k" alt="Circa Logo" class="company-logo" title="Circa - Powering Dev Mind Speed Game">
+                <div class="company-name">Circa</div>
+            </div>
             <h1>🧮 Dev Mind Speed Game</h1>
-            <p>اختبر سرعتك في الحساب!</p>
+            <p class="subtitle">Challenge your math skills with Circa's speed game!</p>
             
-            <form id="startForm">
+            <form id="startForm" class="start-form">
                 <div class="input-group">
-                    <label for="playerName">اسم اللاعب:</label>
-                    <input type="text" id="playerName" required placeholder="أدخل اسمك">
+                    <label for="playerName">Your Name:</label>
+                    <input type="text" id="playerName" required placeholder="Enter your name" aria-label="Player Name">
                 </div>
                 
                 <div class="input-group">
-                    <label for="difficulty">مستوى الصعوبة:</label>
-                    <select id="difficulty" required>
-                        <option value="">اختر المستوى</option>
-                        <option value="1">مستوى 1 - سهل (رقم واحد)</option>
-                        <option value="2">مستوى 2 - متوسط (رقمان)</option>
-                        <option value="3">مستوى 3 - صعب (3 أرقام)</option>
-                        <option value="4">مستوى 4 - خبير (4 أرقام)</option>
+                    <label for="difficulty">Select Difficulty:</label>
+                    <select id="difficulty" required aria-label="Difficulty Level">
+                        <option value="">Choose Level</option>
+                        <option value="1">Level 1 - Easy (single digit)</option>
+                        <option value="2">Level 2 - Medium (two digits)</option>
+                        <option value="3">Level 3 - Hard (3 digits)</option>
+                        <option value="4">Level 4 - Expert (4 digits)</option>
                     </select>
                 </div>
                 
-                <button type="submit" class="btn-primary">🚀 ابدأ اللعبة</button>
+                <button type="submit" class="btn-primary">🚀 Start Challenge</button>
             </form>
         </div>
     </div>
 
-    <!-- صفحة اللعب -->
+    <!-- Game Page -->
     <div id="gamePage" class="page">
         <div class="container">
             <div class="game-header">
-                <h2 id="welcomeMessage">مرحباً!</h2>
+                <h2 id="welcomeMessage">Welcome!</h2>
                 <div class="game-stats">
-                    <span>النقاط: <span id="currentScore">0</span></span>
-                    <span>المستوى: <span id="gameLevel">1</span></span>
+                    <span>Score: <span id="currentScore">0</span></span>
+                    <span>Level: <span id="gameLevel">1</span></span>
                 </div>
             </div>
             
             <div class="question-container">
-                <h3>السؤال:</h3>
+                <h3>Question:</h3>
                 <div id="questionText" class="question">5 + 3 = ?</div>
                 
                 <div class="answer-section">
-                    <input type="number" id="answerInput" placeholder="أدخل إجابتك" step="0.01">
-                    <button id="submitAnswer" class="btn-primary">إرسال الإجابة</button>
+                    <input type="number" id="answerInput" placeholder="Enter your answer" step="0.01">
+                    <button id="submitAnswer" class="btn-primary">Submit Answer</button>
                 </div>
                 
                 <div id="result" class="result"></div>
             </div>
             
-            <button id="endGame" class="btn-secondary">إنهاء اللعبة</button>
+            <button id="endGame" class="btn-secondary">End Game</button>
         </div>
     </div>
 
-    <!-- صفحة النتائج -->
+    <!-- Results Page -->
     <div id="resultsPage" class="page">
         <div class="container">
-            <h1>🏆 نتائج اللعبة</h1>
+            <div class="company-header-small">
+                <img src="https://media.licdn.com/dms/image/v2/D4D0BAQH4b8ww3uhojg/company-logo_200_200/company-logo_200_200/0/1705499115912/circahub_logo?e=1756339200&v=beta&t=EbgunIZuYKVM1pRbbZbL88-mnkZ1FW9GaunuZ4oRr3k" alt="Circa Logo" class="company-logo-small">
+                <span class="company-name-small">Circa</span>
+            </div>
+            <h1>🏆 Game Results</h1>
             
             <div class="results-container">
                 <div class="stat-card">
-                    <h3>النقاط النهائية</h3>
+                    <h3>Final Score</h3>
                     <div id="finalScore" class="big-number">0/0</div>
                 </div>
                 
                 <div class="stat-card">
-                    <h3>إجمالي الوقت</h3>
-                    <div id="totalTime" class="big-number">0 ثانية</div>
+                    <h3>Total Time</h3>
+                    <div id="totalTime" class="big-number">0 seconds</div>
                 </div>
                 
                 <div class="stat-card">
-                    <h3>أسرع إجابة</h3>
+                    <h3>Best Time</h3>
                     <div id="bestTime" class="big-number">-</div>
                 </div>
             </div>
             
             <div class="history-section">
-                <h3>تاريخ الأسئلة</h3>
+                <h3>Question History</h3>
                 <div id="gameHistory" class="history-list"></div>
             </div>
             
-            <button id="playAgain" class="btn-primary">🔄 العب مرة أخرى</button>
+            <button id="playAgain" class="btn-primary">🔄 Play Again</button>
         </div>
     </div>
 

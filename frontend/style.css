@@ -5,10 +5,10 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', 'Arial', sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
-    direction: rtl;
+    direction: ltr;
     color: #333;
 }
 
@@ -30,73 +30,135 @@ body {
     display: block;
 }
 
-/* صفحة البداية */
+/* Company Branding */
+.company-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    animation: logoFadeIn 1s ease-in-out;
+}
+
+.company-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.company-logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.7);
+}
+
+.company-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 3px 3px 6px rgba(102, 126, 234, 0.4);
+    letter-spacing: 3px;
+}
+
+.company-header-small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.company-logo-small {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.company-name-small {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(102, 126, 234, 0.3);
+}
+
+/* Start Page */
 h1 {
     text-align: center;
     color: white;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-shadow: 3px 3px 6px rgba(102, 126, 234, 0.4);
+    font-family: 'Poppins', sans-serif;
 }
 
-p {
+.subtitle {
     text-align: center;
-    color: #f0f0f0;
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+    color: #e0e7ff;
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+
+.start-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .input-group {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 label {
     display: block;
-    color: white;
+    color: #e0e7ff;
     font-weight: bold;
-    margin-bottom: 8px;
-    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
 }
 
 input, select {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    background: rgba(255,255,255,0.9);
+    border-radius: 10px;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.95);
     transition: all 0.3s ease;
 }
 
 input:focus, select:focus {
     outline: none;
     background: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(102, 126, 234, 0.4);
 }
 
 .btn-primary {
     width: 100%;
-    padding: 15px;
-    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    padding: 18px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
     color: white;
     border: none;
-    border-radius: 8px;
-    font-size: 1.2rem;
+    border-radius: 10px;
+    font-size: 1.3rem;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255,107,107,0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.6);
 }
 
 .btn-secondary {
     padding: 10px 20px;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
     color: white;
     border: 2px solid white;
     border-radius: 8px;
@@ -111,9 +173,9 @@ input:focus, select:focus {
     color: #667eea;
 }
 
-/* صفحة اللعب */
+/* Game Page */
 .game-header {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 12px;
     margin-bottom: 30px;
@@ -124,21 +186,22 @@ input:focus, select:focus {
     color: white;
     margin-bottom: 10px;
     font-size: 1.8rem;
+    font-family: 'Poppins', sans-serif;
 }
 
 .game-stats {
     display: flex;
     justify-content: space-around;
-    color: #f0f0f0;
+    color: #e0e7ff;
     font-size: 1.1rem;
 }
 
 .question-container {
-    background: rgba(255,255,255,0.95);
+    background: rgba(255, 255, 255, 0.95);
     padding: 30px;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
 }
 
@@ -146,6 +209,7 @@ input:focus, select:focus {
     color: #667eea;
     margin-bottom: 15px;
     font-size: 1.3rem;
+    font-family: 'Poppins', sans-serif;
 }
 
 .question {
@@ -165,9 +229,10 @@ input:focus, select:focus {
 
 #answerInput {
     width: 200px;
-    margin-left: 15px;
+    margin-right: 15px;
     text-align: center;
     font-size: 1.3rem;
+    font-family: 'Poppins', sans-serif;
 }
 
 .result {
@@ -180,6 +245,7 @@ input:focus, select:focus {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Poppins', sans-serif;
 }
 
 .result.correct {
@@ -194,7 +260,7 @@ input:focus, select:focus {
     border: 1px solid #f5c6cb;
 }
 
-/* صفحة النتائج */
+/* Results Page */
 .results-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -203,27 +269,29 @@ input:focus, select:focus {
 }
 
 .stat-card {
-    background: rgba(255,255,255,0.9);
+    background: rgba(255, 255, 255, 0.9);
     padding: 25px;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .stat-card h3 {
     color: #667eea;
     margin-bottom: 15px;
     font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
 }
 
 .big-number {
     font-size: 1.8rem;
     font-weight: bold;
     color: #333;
+    font-family: 'Poppins', sans-serif;
 }
 
 .history-section {
-    background: rgba(255,255,255,0.9);
+    background: rgba(255, 255, 255, 0.9);
     padding: 25px;
     border-radius: 12px;
     margin-top: 20px;
@@ -233,6 +301,7 @@ input:focus, select:focus {
     color: #667eea;
     margin-bottom: 15px;
     text-align: center;
+    font-family: 'Poppins', sans NSF-serif;
 }
 
 .history-list {
@@ -248,18 +317,24 @@ input:focus, select:focus {
     margin: 5px 0;
     background: #f8f9fa;
     border-radius: 6px;
-    border-right: 4px solid #667eea;
+    border-left: 4px solid #667eea;
+    font-family: 'Poppins', sans-serif;
 }
 
 .history-item.correct {
-    border-right-color: #28a745;
+    border-left-color: #28a745;
 }
 
 .history-item.incorrect {
-    border-right-color: #dc3545;
+    border-left-color: #dc3545;
 }
 
-/* تأثيرات متحركة */
+/* Animations */
+@keyframes logoFadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -269,7 +344,7 @@ input:focus, select:focus {
     animation: fadeIn 0.5s ease-out;
 }
 
-/* تجاوب مع الشاشات الصغيرة */
+/* Responsive Design */
 @media (max-width: 768px) {
     .container {
         padding: 15px;
@@ -286,4 +361,34 @@ input:focus, select:focus {
     .results-container {
         grid-template-columns: 1fr;
     }
+    
+    .company-logo {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .company-name {
+        font-size: 2rem;
+    }
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    color: white;
+    text-decoration: underline;
 }
